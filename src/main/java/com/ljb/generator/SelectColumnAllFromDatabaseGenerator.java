@@ -40,7 +40,7 @@ public class SelectColumnAllFromDatabaseGenerator extends SelectFromDatabaseGene
         return generate(this.resultSize);
     }
 
-    String constructQuerySqlStatement() {
+    public String constructQuerySqlStatement() {
         StringBuilder sqlst = new StringBuilder("SELECT ");
         sqlst.append(this.referenceColumnName).append(" FROM ")
                 .append(this.referenceTableName).append(" ORDER BY ")

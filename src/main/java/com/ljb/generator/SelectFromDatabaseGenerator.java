@@ -3,7 +3,7 @@ package com.ljb.generator;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public abstract class SelectFromDatabaseGenerator extends SelectGenerator {
+public abstract class SelectFromDatabaseGenerator extends AbstractSelectGenerator implements IDataFromDatabaseGenerator{
 
     String databaseUrl;
 
@@ -24,9 +24,8 @@ public abstract class SelectFromDatabaseGenerator extends SelectGenerator {
         this.referenceColumnName = referenceColumnName;
     }
 
-    abstract String constructQuerySqlStatement();
 
-    Connection getConnection() {
+    public Connection getConnection() {
         try {
             Class.forName("com.vertica.jdbc.Driver");
             return DriverManager.getConnection(this.databaseUrl, this.databaseUser, this.databasePassword);
@@ -35,4 +34,5 @@ public abstract class SelectFromDatabaseGenerator extends SelectGenerator {
         }
 
     }
+
 }

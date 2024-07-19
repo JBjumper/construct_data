@@ -29,4 +29,8 @@ public class DataConstructor implements IDataConstructor{
     public List<String> make(IDataFormatter dataFormatter) {
         return dataFormatter.format(this.generateResults,this.resultSize);
     }
+
+    public List<List<String>> getGenerateResults() {
+        return generateResults;
+    }
 }

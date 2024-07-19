@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SelectFromListGenerator extends SelectGenerator {
+public class SelectFromListGenerator extends AbstractSelectGenerator {
 
     public SelectFromListGenerator(String ... elements) {
         this.selects.addAll(Arrays.asList(elements));
